@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Tabs from './components/tabs';
+class App extends Component {
 
-function App() {
+  constructor(props){
+    super(props)
+    this.state = {
+      tabNames: ['Home', 'About', 'User']
+    }
+  }
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="browser">
+       
+          
+        <Tabs tabNames = {this.state.tabNames}/>
+        <div className='viewport'>Pages Go Here</div>
+      </div>
     </div>
-  );
+  )
+}
 }
 
 export default App;
